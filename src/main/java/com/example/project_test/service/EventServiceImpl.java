@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +21,11 @@ public class EventServiceImpl implements EventService {
 
         JSONObject jo = new JSONObject(inputJSON);
         String name = jo.getString("name");
+        LocalDateTime momentStart = LocalDateTime.parse(jo.getString("momentstart"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        LocalDateTime momentEnd = LocalDateTime.parse(jo.getString("momentend"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         //сохранить исходный event
-        EventDto dto = new EventDto(name);
+        EventDto dto = new EventDto(name, momentStart, momentEnd);
         eventRepository.save(dto);
 
         //тут разная бизнес-логика

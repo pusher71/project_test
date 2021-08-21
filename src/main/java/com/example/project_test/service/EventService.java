@@ -5,6 +5,6 @@ import com.example.project_test.entity.EventDto;
 import java.util.List;
 
 public interface EventService {
-    EventDto create(String name);
+    EventDto create(String inputJSON);
     List<EventDto> findAll();
 }
