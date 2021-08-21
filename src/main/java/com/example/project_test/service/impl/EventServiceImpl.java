@@ -1,7 +1,8 @@
-package com.example.project_test.service;
+package com.example.project_test.service.impl;
 
 import com.example.project_test.entity.EventDto;
 import com.example.project_test.repository.EventRepository;
+import com.example.project_test.service.EventService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,10 @@ public class EventServiceImpl implements EventService {
         String name = jo.getString("name");
         LocalDateTime momentStart = LocalDateTime.parse(jo.getString("momentstart"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         LocalDateTime momentEnd = LocalDateTime.parse(jo.getString("momentend"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        int residentId = jo.getInt("resident_id");
 
         //сохранить исходный event
-        EventDto dto = new EventDto(name, momentStart, momentEnd);
+        EventDto dto = new EventDto(name, momentStart, momentEnd, residentId);
         eventRepository.save(dto);
 
         //тут разная бизнес-логика

@@ -1,7 +1,8 @@
-package com.example.project_test.service;
+package com.example.project_test.service.impl;
 
 import com.example.project_test.entity.SaleDto;
 import com.example.project_test.repository.SaleRepository;
+import com.example.project_test.service.SaleService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

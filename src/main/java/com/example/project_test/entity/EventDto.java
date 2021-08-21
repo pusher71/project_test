@@ -20,13 +20,17 @@ public class EventDto {
     @Column(name = "momentend")
     private LocalDateTime momentEnd;
 
+    @Column(name = "resident_id")
+    private int residentId;
+
     public EventDto() {
     }
 
-    public EventDto(String name, LocalDateTime momentStart, LocalDateTime momentEnd) {
+    public EventDto(String name, LocalDateTime momentStart, LocalDateTime momentEnd, int residentId) {
         this.name = name;
         this.momentStart = momentStart;
         this.momentEnd = momentEnd;
+        this.residentId = residentId;
     }
 
     public Integer getId() {
@@ -59,5 +63,13 @@ public class EventDto {
 
     public void setMomentEnd(LocalDateTime momentEnd) {
         this.momentEnd = momentEnd;
+    }
+
+    public Integer getResidentId() {
+        return residentId;
+    }
+
+    public void setResidentId(Integer residentId) {
+        this.residentId = residentId;
     }
 }
