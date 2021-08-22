@@ -34,7 +34,7 @@ git clone https://github.com/pusher71/project_test.git
 ~~~
 ### База данных
 
-Необходимо выполнить инициализирующий скрипт init_database.sql, а подключение к базе прописать в конфигурационный файл сервиса по адресу: jdbc:postgresql://localhost:5432/project_test_db
+Необходимо запустить базу данных postgres по адресу jdbc:postgresql://localhost:5432/project_test_db, и в ней выполнить инициализирующий скрипт init_database.sql
 
 ### Установка зависимостей проекта
 
@@ -42,4 +42,4 @@ git clone https://github.com/pusher71/project_test.git
 
 РАЗРАБОТЧИКИ
 
-<h4>Бондаренко Богдан backend https://vk.com/id154239070 </h4>
+<h4>Бондаренко Богдан backend https://vk.com/id154239070</h4>
